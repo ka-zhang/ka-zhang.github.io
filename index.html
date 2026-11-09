@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ka Zhang @ University of Strathclyde</title>
+    <meta name="description" content="Personal homepage of Ka Zhang, University of Strathclyde." />
+    <style>
+        :root {
+            --text: #000;
+            --muted: #444;
+            --accent: #990000;   /* 正文里链接的颜色 */
+            --link: #4285F4;     /* 其它链接颜色 */
+            --link-hover: #0000FF;
+            --bg: #fff;
+        }
+
+        body {
+            margin: 30px auto;
+            padding: 0 16px;
+            max-width: 1000px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.45;
+        }
+
+        p { margin: 0; }
+
+        a { color: var(--link); text-decoration: none; }
+        a:hover, a:active { color: var(--link-hover); }
+        .content a { color: var(--accent); }
+        .content a:hover { color: var(--link-hover); }
+
+        /* ---------- 顶部：照片 + 名字 + 联系方式 ---------- */
+        .header {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .header img {
+            height: 240px;
+            width: auto;
+            max-width: 100%;
+        }
+        .name {
+            font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+            font-size: 34px;
+            font-weight: normal;
+            margin-bottom: 4px;
+        }
+        .contact {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            margin: 14px 0 10px;
+        }
+        .links { margin-top: 10px; }
+
+        /* ---------- 小节标题 ---------- */
+        .section-title {
+            font-size: 20px;
+            font-weight: normal;
+            margin: 32px 0 12px;
+        }
+        .year-title {
+            font-size: 18px;
+            font-weight: normal;
+            margin: 20px 0 10px;
+        }
+
+        /* ---------- 新闻 / 经历：左边日期，右边内容 ---------- */
+        .dated {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 6px 10px;
+        }
+        .dated.news { grid-template-columns: 80px 1fr; }
+
+        ul { margin: 0; padding-left: 22px; }
+        li { margin-bottom: 2px; }
+
+        /* ---------- 论文 ---------- */
+        .pub {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .pub img {
+            width: 210px;
+            flex-shrink: 0;
+            border: 0;
+        }
+        .pub-title { font-weight: normal; }
+        .pub-venue { font-style: italic; }
+        .pub-links { margin-top: 5px; }
+        .me { font-weight: bold; }
+        .highlight { color: #DB4437; font-weight: normal; }
+
+        footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ---------- 手机屏幕 ---------- */
+        @media (max-width: 640px) {
+            .header img { height: 180px; }
+            .name { font-size: 28px; }
+            .pub { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .pub img { width: 100%; max-width: 320px; }
+            .dated, .dated.news { grid-template-columns: 1fr; gap: 0 0; }
+            .dated > p:nth-child(odd) { margin-top: 10px; font-weight: normal; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== 顶部 ===================== -->
+    <div class="header">
+        <!-- 把你的照片放到 data/image/ 里，然后改这里的文件名，比如 profile.jpg -->
+        <img src="./data/image/profile.svg" alt="Ka Zhang" />
+        <div class="content">
+            <p class="name">Ka Zhang</p>
+            <p>[Position, e.g. PhD Researcher]</p>
+            <p>[Department, e.g. Department of ...]</p>
+            <p>University of Strathclyde</p>
+
+            <div class="contact">
+                <p>Email:</p><p>k.zhang@strath.ac.uk</p>
+                <p>Office:</p><p>[Room / Building]</p>
+                <p>Address:</p><p>[Street], Glasgow, United Kingdom</p>
+            </div>
+
+            <p class="links">
+                <a href="https://github.com/ka-zhang">GitHub</a> |
+                <a href="#">Google Scholar</a> |
+                <a href="#">LinkedIn</a> |
+                <a href="#">CV</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ===================== 简介 ===================== -->
+    <div class="content">
+        <p>I am a [position] at the <a href="https://www.strath.ac.uk/">University of Strathclyde</a>, working with [supervisor / group]. Before that, I received my [degree] in [subject] from [university] in [year].</p>
+        <br />
+        <p>My research focuses on [research area 1] and [research area 2], with an emphasis on [specific topic]. [One or two sentences about what you want to achieve, awards, grants, etc.]</p>
+    </div>
+
+    <!-- ===================== 新闻 ===================== -->
+    <p class="section-title">News</p>
+    <div class="dated news content">
+        <p>2026.11</p>
+        <p>My personal homepage is online.</p>
+
+        <p>2026.9</p>
+        <p>[Our paper "<i>Paper title</i>" has been accepted by <a href="#">Venue</a>.]</p>
+    </div>
+
+    <!-- ===================== 学术活动 ===================== -->
+    <p class="section-title">Professional Activities</p>
+    <ul class="content">
+        <li>Reviewer: [Journal A], [Journal B], [Conference C]</li>
+        <li>Teaching assistant: [Course name], University of Strathclyde, [year]</li>
+        <li>Talk: [Talk title], [Event], [year]</li>
+    </ul>
+
+    <!-- ===================== 论文 ===================== -->
+    <p class="section-title">Publications</p>
+
+    <p class="year-title">2026</p>
+
+    <!-- 每篇论文复制一份下面这个 <div class="pub"> ... </div> -->
+    <div class="pub">
+        <img src="./data/teaser/placeholder.svg" alt="" />
+        <div class="content">
+            <p class="pub-title">[Paper Title]</p>
+            <p><span class="me">Ka Zhang</span>, [Co-author], and [Co-author]</p>
+            <p class="pub-venue">[Journal or Conference], 2026</p>
+            <p class="pub-links">
+                <a href="#">Paper</a> | <a href="#">Code</a> | <a href="#">arXiv</a>
+            </p>
+        </div>
+    </div>
+
+    <p class="year-title">2025</p>
+
+    <div class="pub">
+        <img src="./data/teaser/placeholder.svg" alt="" />
+        <div class="content">
+            <p class="pub-title">[Paper Title]</p>
+            <p>[Co-author], <span class="me">Ka Zhang</span>, and [Co-author]</p>
+            <p class="pub-venue">[Journal or Conference], 2025</p>
+            <p class="highlight">[Optional: Best Paper Award]</p>
+            <p class="pub-links">
+                <a href="#">Paper</a> | <a href="#">Project</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ===================== 教育 / 经历 ===================== -->
+    <p class="section-title">Education &amp; Experience</p>
+    <div class="dated content">
+        <p>[2024.09]--present</p>
+        <p>[Position], <a href="https://www.strath.ac.uk/">University of Strathclyde</a>, Glasgow, UK</p>
+
+        <p>[2020.09]--[2024.06]</p>
+        <p>[Degree], [University], [City, Country]</p>
+    </div>
+
+    <footer>
+        Last updated: November 2026
+    </footer>
+
+</body>
+</html>
